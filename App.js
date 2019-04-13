@@ -15,7 +15,6 @@ export default class App extends React.Component {
   }
 
   loadWeather() {
-    console.log(WEATHER_KEY)
     const apikey = WEATHER_KEY
     const { latitude, longitude } = this.state.location.coords
     const units = 'Imperial'
@@ -41,7 +40,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <DisplayWeather />
+        <DisplayWeather data={this.state.weather} />
       </View>
     );
   }
